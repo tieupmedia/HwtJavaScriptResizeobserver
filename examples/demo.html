@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Demo of hwt.javascript.resizeobserver</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="../src/hwt.javascript.resizeobserver.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            document.addEventListener('DOMContentLoaded', function(event) {
+                "use strict";
+                resizeObserver(
+                    function() {
+                        resizeInfo();
+                    },
+                    200,
+                    10
+                );
+            });
+            
+            function resizeInfo() {
+                var resizeinfo = document.getElementById('resizeinfo');
+                resizeinfo.innerHTML = resizeinfo.innerHTML + '- Resize detected <br />';
+            }
+        </script>
+    </head>
+
+    <body>
+        <h1>Just a test page</h1>
+        <p>Resize your browser window for test!<br /><br /></p>
+        <h2>Resize-Info:</h2>
+        <p id="resizeinfo"> </p>
+    </body>
+</html>
